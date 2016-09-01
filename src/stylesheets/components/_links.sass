@@ -1,0 +1,100 @@
+.links
+  align-items: center
+  display: flex
+  flex-flow: row nowrap
+  flex-grow: 2
+  justify-content: center
+  width: 100%
+
+  &__content
+    display: flex
+    flex-flow: row nowrap
+    justify-content: center
+    max-width: 1200px
+    width: 100%
+    align-items: flex-start
+
+  &__set
+    +blurred-bg
+    width: 23%
+    margin: 0 1%
+
+
+.link
+  // transition: background-color 0.4s
+
+  a
+    align-items: center
+    color: white
+    display: flex
+    font-size: 18px
+    font-weight: 600
+    padding: 10px
+    text-decoration: none
+
+  &:hover
+    background-color: rgba(#000, 0.3)
+
+  &.-searchable:hover
+    .link__text
+      color: transparent
+
+    .link__search
+      margin-top: 0
+      top: 0
+      transform: scaleX(1)
+      transition: transform 0.2s 0s, top 0.2s 0.2s, margin 0.2s 0.2s
+
+
+  &__icon
+    height: 40px
+    width: 40px
+    display: flex
+    justify-content: center
+    align-items: center
+    text-transform: lowercase
+    font-size: 12px
+
+    &:before
+      content: attr(data-letter)
+
+  &__text
+    align-items: center
+    align-self: stretch
+    display: flex
+    flex-grow: 1
+    padding-left: 10px
+    position: relative
+    overflow: hidden
+    transition: color 0.4s
+
+  &__search
+    +no-appearance
+    background-color: rgba(#000, 0.5)
+    color: #fff
+    font-family: inherit
+    font-size: 16px
+    font-weight: 600
+    height: 100%
+    left: 0
+    margin-top: -3px
+    padding: 0 10px
+    position: absolute
+    top: 100%
+    transform-origin: top left
+    transform: scaleX(0)
+    transition: transform 0.2s 0.2s, top 0.2s 0s, margin 0.2s 0s
+    width: 100%
+
+    &:focus
+      outline: none
+
+  &__GREG
+    color: rgba(#3B0095, 0.2)
+    color: rgba(#ffffff, 0.2)
+    color: rgba(#75C448, 0.2)
+    color: rgba(#BF0000, 0.2)
+    color: rgba(#455897, 0.2)
+    color: rgba(#d52027, 0.2)
+    color: rgba(#3F62B7, 0.2)
+    color: rgba(#000000, 0.2)

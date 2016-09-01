@@ -1,0 +1,42 @@
+{% extends 'layouts/application.html' %}
+
+{% block content %}
+  <main data-module="SizeBg">
+
+    <div class="links">
+        <div class="links__content">
+
+          {% for section in sections %}
+            <ul class="links__set" data-module="Search">
+
+              {% for link in section.links %}
+                <li class="link {{ '-searchable' if link.queryUrl }}">
+
+                  <a href="{{ link.url }}">
+                    <div class="link__icon" style="background-color:{{ link.bg }}; color: {{ link.fg }};" data-letter="{{ link.letter }}"></div>
+                    
+                    <div class="link__text">
+                      {{ link.name }}
+                      {% if link.searchable %}
+                        <input type="text" class="link__search" {% if link.queryUrl %}data-queryurl="{{ link.queryUrl }}"{% endif %}>
+                      {% endif %}
+                    </div>
+                  </a>
+
+                </li>
+              {% endfor %}
+
+            </ul>
+          {% endfor %}
+
+      </div>
+    </div>
+
+    <div class="time">
+      <div class="time__content">
+        <span class="time__numbers" data-module="Time"></span>
+        <span class="icon-weather-partly-sunny"></span>
+      </div>
+    </div>
+  </main>
+{% endblock %}

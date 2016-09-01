@@ -1,0 +1,24 @@
+{
+  "name": "new-tab",
+  "version": "1.0.0",
+  "description": "Dashboard for new browser tab",
+  "main": "index.js",
+  "dependencies": {
+    "gulp-starter": "^4.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "gulp-starter",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gregkohn/new-tab.git"
+  },
+  "author": "Greg Kohn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gregkohn/new-tab/issues"
+  },
+  "homepage": "https://github.com/gregkohn/new-tab#readme"
+}

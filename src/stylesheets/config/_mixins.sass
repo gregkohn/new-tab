@@ -1,0 +1,45 @@
+=no-appearance
+  appearance: none
+  -moz-appearance: none
+  -webkit-appearance: none
+  background: none
+  border: none
+  border-radius: 0
+
+=placeholder
+  text-overflow: ellipsis
+
+  &::-webkit-input-placeholder
+    text-overflow: ellipsis
+    @content
+
+  &:-moz-placeholder
+    text-overflow: ellipsis
+    @content
+
+  &::-moz-placeholder
+    text-overflow: ellipsis
+    @content
+
+  &:-ms-input-placeholder
+    text-overflow: ellipsis
+    @content
+
+=font-smoothing
+  -moz-osx-font-smoothing: grayscale
+  -webkit-font-smoothing: antialiased
+
+=breakpoint($breakpoint)
+  @media (min-width: $breakpoint)
+    @content
+
+=breakpoint-max($breakpoint)
+  @media (max-width: $breakpoint)
+    @content
+
+=vertical-breakpoint($breakpoint)
+  @media (min-height: $breakpoint)
+    @content
+
+=transition($type: default)
+  transition: transitions($type)
