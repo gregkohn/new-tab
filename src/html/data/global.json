@@ -7,7 +7,7 @@
       "links": [
         {
           "name": "Fantasy Football",
-          "url": "#",
+          "url": "https://football.fantasysports.yahoo.com/f1/581040",
           "searchable": false,
           "bg": "#3B0095",
           "fg": "#fff",
@@ -78,7 +78,7 @@
         },
         {
           "name": "YouTube",
-          "url": "http//www.youtube.com",
+          "url": "http://www.youtube.com",
           "searchable": true,
           "queryUrl": "https://www.youtube.com/results?search_query=",
           "bg": "#EDEDED",
