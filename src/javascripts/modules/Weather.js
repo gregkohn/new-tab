@@ -12,18 +12,26 @@ export default class Weather {
   }
 
   grabTemp() {
-    let request = new XMLHttpRequest();
-    request.open('GET', 'http://api.wunderground.com/api/3f42846c17797eb8/conditions/q/VA/Arlington.json', true)
+    if (this.cacheStillValid()) {
+      this.loadFromCache()
+    } else {
+      let request = new XMLHttpRequest();
+      request.open('GET', 'http://api.wunderground.com/api/3f42846c17797eb8/conditions/q/VA/Arlington.json', true)
 
-    request.onload = () => {
-      if (request.status >= 200 && request.status < 400) {
-        let data = JSON.parse(request.response)
-        this.setTemp(this.formatTemp(data.current_observation.temp_f.toString()))
-        this.setIcon(this.formatIcon(data.current_observation.icon))
+      request.onload = () => {
+        if (request.status >= 200 && request.status < 400) {
+          let data = JSON.parse(request.response)
+          let temp = this.formatTemp(data.current_observation.temp_f.toString())
+          let icon = this.formatIcon(data.current_observation.icon)
+
+          this.setTemp(temp)
+          this.setIcon(icon)
+          this.cacheInfo(temp, icon)
+        }
       }
-    }
 
-    request.send()
+      request.send()
+    }
   }
 
   formatTemp(temp) {
@@ -67,5 +75,20 @@ export default class Weather {
 
   setIcon(icon) {
     this.iconEl.setAttribute('xlink:href','images/icons.svg#' + icon)
+  }
+
+  cacheInfo(temp, icon) {
+    localStorage.setItem('temp', temp)
+    localStorage.setItem('icon', icon)
+    localStorage.setItem('timeCached', (new Date).getTime())
+  }
+
+  cacheStillValid() {
+    return ((new Date).getTime() - localStorage.getItem('timeCached')) < 60000 //if less than a minute old
+  }
+
+  loadFromCache() {
+    this.setTemp(localStorage.getItem('temp'))
+    this.setIcon(localStorage.getItem('icon'))
   }
 }
