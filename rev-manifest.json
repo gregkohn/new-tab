@@ -1,11 +1,12 @@
 {
   "images/bear.jpg": "images/bear-0191e6ddb7.jpg",
   "images/flamingos.jpg": "images/flamingos-87837155f0.jpg",
+  "images/icons.svg": "images/icons-57df716b80.svg",
   "images/mountains-1.jpg": "images/mountains-1-3072258796.jpg",
   "images/ocean-1.jpg": "images/ocean-1-513171a892.jpg",
   "images/ocean-2.jpg": "images/ocean-2-88f5d79f15.jpg",
   "images/yosemite-1.jpg": "images/yosemite-1-3220932f0c.jpg",
   "images/yosemite-2.jpg": "images/yosemite-2-778fc32c67.jpg",
-  "javascripts/app.js": "javascripts/app-fba2b95213b12cf88942.js",
-  "stylesheets/app.css": "stylesheets/app-5b2e0d45ae.css"
+  "javascripts/app.js": "javascripts/app-67148c56de2445ed98d5.js",
+  "stylesheets/app.css": "stylesheets/app-c4f43abc32.css"
 }
