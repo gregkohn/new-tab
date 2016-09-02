@@ -3,18 +3,25 @@ export default class SizeBg {
     this.el = el
 
     this.variables()
-    this.determineAspect()
-    this.listen()
+    this.img.onload = () => {
+      this.determineBgSize()
+      this.determineAspect()
+      this.listen()
+    }
   }
 
   variables() {
-    this.pictureWidth  = 1280
-    this.pictureHeight = 800
-    this.pictureRatio  = this.pictureWidth / this.pictureHeight
+    this.img = document.getElementById('testBgSize')
   }
 
   listen() {
     window.addEventListener('resize', this.debounce(this.determineAspect.bind(this), 100))
+  }
+
+  determineBgSize() {
+    this.pictureWidth  = this.img.naturalWidth
+    this.pictureHeight = this.img.naturalHeight
+    this.pictureRatio  = this.pictureWidth / this.pictureHeight
   }
 
   determineAspect() {

@@ -1,0 +1,42 @@
+.updates
+  +blurred-bg
+  width: 100%
+
+  &__content
+    align-items: center
+    color: white
+    display: flex
+    font-family: Dosis
+    justify-content: center
+    line-height: 1
+    padding: 10px
+
+
+$divider-width: 5px
+$divider-margin: 20px
+.time
+  font-size: 120px
+  margin-right: $divider-width + ($divider-margin * 2)
+  position: relative
+
+  &:after
+    background-color: rgba(#000, 0.2)
+    content: ''
+    height: 100%
+    left: 100%
+    margin-left: $divider-margin
+    position: absolute
+    top: 0
+    width: $divider-width
+
+
+.weather
+  text-align: center
+
+  &__icon
+    svg
+      fill: white
+      width: 45px
+
+  &__temp
+    font-size: 30px

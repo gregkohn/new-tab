@@ -3,7 +3,7 @@
 {% block content %}
   <main data-module="SizeBg">
 
-    <div class="links">
+    <section class="links">
         <div class="links__content">
 
           {% for section in sections %}
@@ -30,13 +30,19 @@
           {% endfor %}
 
       </div>
-    </div>
+    </section>
 
-    <div class="time">
-      <div class="time__content">
-        <span class="time__numbers" data-module="Time"></span>
-        <span class="icon-weather-partly-sunny"></span>
+    <section class="updates">
+      <div class="updates__content">
+        <div class="time" data-module="Time"></div>
+        <div class="weather" data-module="Weather">
+          <div class="weather__icon">{{ sprite(id='cloudy', el='div') }}</div>
+          <div class="weather__temp"></div>
+        </div>
       </div>
-    </div>
+    </section>
+
+    <!-- This element is used for JS only -->
+    <img style="display: none;" id="testBgSize" src="https://source.unsplash.com/category/nature/1280x800">
   </main>
 {% endblock %}

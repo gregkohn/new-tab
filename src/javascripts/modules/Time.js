@@ -4,9 +4,6 @@ export default class Time {
 
     this.setTime()
     this.updateTime()
-    this.grabTemp()
-
-    // console.log(this.grabTemp())
   }
 
   updateTime() {
@@ -40,25 +37,5 @@ export default class Time {
     }
 
     return hour + ':' + minutes
-  }
-
-  grabTemp() {
-    let request = new XMLHttpRequest();
-    request.open('GET', 'http://api.wunderground.com/api/3f42846c17797eb8/conditions/q/VA/Arlington.json', true)
-
-    request.onload = function() {
-      if (this.status >= 200 && this.status < 400) {
-        let data = JSON.parse(this.response)
-        // this.temp = data.current_observation.temp_f.toString()
-        // console.log('asdf')
-        return 'gregggg'
-      }
-    };
-
-    request.send()
-  }
-
-  test() {
-    console.log('GREGGG')
   }
 }
