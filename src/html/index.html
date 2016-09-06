@@ -3,44 +3,8 @@
 {% block content %}
   <main data-module="SizeBg">
 
-    <section class="links">
-        <div class="links__content">
-
-          {% for section in sections %}
-            <ul class="links__set" data-module="Search">
-
-              {% for link in section.links %}
-                <li class="link {{ '-searchable' if link.queryUrl }}">
-
-                  <a href="{{ link.url }}">
-                    <div class="link__icon" style="background-color:{{ link.bg }}; color: {{ link.fg }};" data-letter="{{ link.letter }}"></div>
-                    
-                    <div class="link__text">
-                      {{ link.name }}
-                      {% if link.searchable %}
-                        <input type="text" class="link__search" {% if link.queryUrl %}data-queryurl="{{ link.queryUrl }}"{% endif %}>
-                      {% endif %}
-                    </div>
-                  </a>
-
-                </li>
-              {% endfor %}
-
-            </ul>
-          {% endfor %}
-
-      </div>
-    </section>
-
-    <section class="updates">
-      <div class="updates__content">
-        <div class="time" data-module="Time"></div>
-        <div class="weather" data-module="Weather">
-          <div class="weather__icon">{{ sprite(id='', el='div') }}</div>
-          <div class="weather__temp"></div>
-        </div>
-      </div>
-    </section>
+    {% include 'components/_links.html' %}
+    {% include 'components/_updates.html' %}
 
     <!-- This element is used for JS only -->
     <img style="display: none;" id="testBgSize" src="https://source.unsplash.com/category/nature/1280x800">
