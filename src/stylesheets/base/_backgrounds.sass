@@ -1,11 +1,8 @@
 $background-image: url('https://source.unsplash.com/category/nature/1280x800')
-// $background-image: url('https://unsplash.it/1280/800?image=235')
-// $background-image: url('../images/bear.jpg')
 $overlay: #000
 
 .-blurred-bg
   position: relative
-  // border: 3px solid rgba($overlay, 0.4)
 
   &:before,
   &:after
@@ -20,12 +17,8 @@ $overlay: #000
   &:before
     background: $background-image center center
     background-attachment: fixed
-    background-size: 100vw
+    background-size: cover
     -webkit-filter: blur(10px)
-
-    .-full-height-bg &
-      background-size: auto 100vh
-
 
   &:after
     background-color: rgba($overlay, 0.3)
